@@ -5,7 +5,7 @@ import Order from "../../Models/order.js";
 // Checkout (Convert Cart to Order)
 export const createOrder = async (req, res) => {
   try {
-    const { userId, shippingAddress } = req.body;
+    const { userId, shippingAddress,quantity } = req.body;
 
     // 1. Fetch the user's cart
     const cart = await Cart.findOne({ userId }).populate("items.productId");
