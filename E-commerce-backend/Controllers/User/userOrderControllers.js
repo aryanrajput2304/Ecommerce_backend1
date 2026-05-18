@@ -28,6 +28,7 @@ export const createOrder = async (req, res) => {
       }
 
       orderItems.push({
+        imageUrl:imageUrl,
         productId: product._id,
         name: product.name,
         quantity: item.quantity,
@@ -44,6 +45,7 @@ export const createOrder = async (req, res) => {
     // 4. Create the order
     const order = new Order({
       userId,
+      imageUrl:imageUrl,
       items: orderItems,
       totalAmount,
       shippingAddress,
