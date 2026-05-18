@@ -1,7 +1,6 @@
 import Cart from "../../Models/cart.js";
 import Order from "../../Models/order.js";
 
-
 // Checkout (Convert Cart to Order)
 export const createOrder = async (req, res) => {
   try {
@@ -28,7 +27,6 @@ export const createOrder = async (req, res) => {
       }
 
       orderItems.push({
-        imageUrl:product.imageUrl,
         productId: product._id,
         name: product.name,
         quantity: item.quantity,
