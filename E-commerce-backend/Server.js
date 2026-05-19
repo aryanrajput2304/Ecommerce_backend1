@@ -4,15 +4,14 @@ import cors from "cors";
 import connectDB from "./Config/db.js";
 import cookieParser from "cookie-parser";
 
+import adminRoutes from "./Routes/adminAuthRoutes.js";
+import userRoutes from "./Routes/User/userAuthRoutes.js";
+import userMngRoutes from "./Routes/userRoutes.js";
+import adminProducts from "./Routes/admin-productRoutes.js";
 
-import adminRoutes from "./Routes/adminAuthRoutes.js"
-import userRoutes from "./Routes/User/userAuthRoutes.js"
-import userMngRoutes from "./Routes/userRoutes.js"
-import adminProducts from "./Routes/admin-productRoutes.js"
-
-import userCartRotues from "./Routes/User/userCartRoutes.js"
-import userOrderRotues from "./Routes/User/userOrderRoutes.js"
-import adminOrderMng from "./Routes/adminOrderRoutes.js"
+import userCartRotues from "./Routes/User/userCartRoutes.js";
+import userOrderRotues from "./Routes/User/userOrderRoutes.js";
+import adminOrderMng from "./Routes/adminOrderRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -23,6 +22,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
+      "https://ecommerce-website-e-gadgets.onrender.com",
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
